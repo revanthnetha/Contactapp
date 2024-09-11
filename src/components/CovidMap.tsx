@@ -1,4 +1,3 @@
-// src/components/CovidMap.tsx
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -6,7 +5,7 @@ import { useCountryData } from "../hooks/useCountryData";
 import { LatLngExpression } from "leaflet";
 import L from "leaflet";
 
-// Custom marker icon to prevent marker issues in leaflet
+// Custom marker icon
 const customIcon = new L.Icon({
   iconUrl:
     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
@@ -17,9 +16,10 @@ const customIcon = new L.Icon({
 const CovidMap: React.FC = () => {
   const { data, isLoading, isError } = useCountryData();
 
+  //skeleton while loading
   if (isLoading)
     return (
-      <p>
+      <>
         <div
           role="status"
           className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse "
@@ -36,7 +36,7 @@ const CovidMap: React.FC = () => {
           </svg>
           <span className="sr-only">Loading...</span>
         </div>
-      </p>
+      </>
     );
   if (isError) return <p>Error loading map data</p>;
 

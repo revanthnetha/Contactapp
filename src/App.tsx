@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Contact />} />
           <Route path="/charts" element={<Charts/>}/>
         </Routes>
         </Layout>

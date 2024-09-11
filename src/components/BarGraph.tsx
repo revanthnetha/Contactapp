@@ -1,4 +1,3 @@
-// src/components/BarGraph.tsx
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { useCovidData } from "../hooks/useCovidData";
@@ -24,9 +23,10 @@ ChartJS.register(
 const BarGraph: React.FC = () => {
   const { data, isLoading, isError } = useCovidData();
 
+  // skeleton when it is loading
   if (isLoading)
     return (
-      <p>
+      <>
         <div className="w-200px h-100px">
           <div
             role="status"
@@ -42,7 +42,7 @@ const BarGraph: React.FC = () => {
             <span className="sr-only">Loading...</span>
           </div>
         </div>
-      </p>
+      </>
     );
   if (isError) return <p>Error loading COVID-19 data</p>;
   // Preparing data for the bar graph
@@ -55,7 +55,7 @@ const BarGraph: React.FC = () => {
           data?.cases || 0,
           data?.active || 0,
           data?.recovered || 0,
-          data?.deaths,
+          data?.deaths || 0,
         ],
         backgroundColor: [
           "rgba(75, 192, 192, 0.2)", // Color for total cases

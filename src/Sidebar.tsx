@@ -54,7 +54,7 @@ const Sidebar: React.FC = () => {
           <ul className="mt-8 space-y-4">
             <li>
               <Link
-                to="/contact"
+                to="/"
                 className="block hover:bg-gray-700 p-2 rounded"
                 onClick={closeSidebar}
               >
