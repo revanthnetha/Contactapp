@@ -1,17 +1,10 @@
-// DeleteContact.tsx
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../state/contact/contactSlice";
-
-interface contact {
-  id: number;
-  firstName: string;
-  lastName: string;
-  status: "active" | "inactive";
-}
+import { Contact } from "../utils/types";
 
 interface DeleteContactProps {
-  contact: contact;
+  contact: Contact;
   onClose: () => void;
 }
 

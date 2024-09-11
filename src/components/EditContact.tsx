@@ -1,13 +1,9 @@
 import React from "react";
 import ContactForm from "./ContactForm";
+import { Contact } from "../utils/types";
 
 interface EditContactProps {
-  contact: {
-    id: number;
-    firstName: string;
-    lastName: string;
-    status: "active" | "inactive";
-  };
+  contact: Contact;
   onClose: () => void;
 }
 

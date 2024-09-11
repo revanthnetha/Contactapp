@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addContact, updateContact } from "../state/contact/contactSlice";
-
+import { Contact } from "../utils/types";
 interface ContactFormProps {
-  contact?: {
-    id: number;
-    firstName: string;
-    lastName: string;
-    status: "active" | "inactive";
-  };
+  contact?: Contact;
   onClose: () => void;
 }
 

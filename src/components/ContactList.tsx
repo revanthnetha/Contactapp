@@ -3,13 +3,7 @@ import { useSelector } from "react-redux";
 import EditContact from "./EditContact";
 import DeleteContact from "./DeleteContact";
 import { RootState } from "../state/store";
-
-interface Contact {
-  id: number;
-  firstName: string;
-  lastName: string;
-  status: "active" | "inactive";
-}
+import { Contact } from "../utils/types";
 
 const ContactList: React.FC = () => {
   // useSelector is used to get the contacts array from the store
